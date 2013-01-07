@@ -7,6 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9C08C203165BE61200AFD9BF /* MessageLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C08C202165BE61200AFD9BF /* MessageLayer.m */; };
+		9C8FF3681681C995003764A9 /* MessageDisplayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C8FF3671681C995003764A9 /* MessageDisplayer.m */; };
+		9CA2CDCB1635923100E15BFB /* GameManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA2CDCA1635923100E15BFB /* GameManager.m */; };
+		9CA2CDCF163592CF00E15BFB /* UrlConnectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA2CDCE163592CF00E15BFB /* UrlConnectionManager.m */; };
+		9CA8E152165A302B00D2C534 /* PlayGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA8E151165A302B00D2C534 /* PlayGame.m */; };
+		9CA8E159165A391100D2C534 /* blank.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CA8E158165A391100D2C534 /* blank.png */; };
+		9CA8E168165A449200D2C534 /* sound9.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9CA8E15E165A449200D2C534 /* sound9.wav */; };
+		9CA8E169165A449200D2C534 /* sound8.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9CA8E15F165A449200D2C534 /* sound8.wav */; };
+		9CA8E16A165A449200D2C534 /* sound7.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9CA8E160165A449200D2C534 /* sound7.wav */; };
+		9CA8E16B165A449200D2C534 /* sound6.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9CA8E161165A449200D2C534 /* sound6.wav */; };
+		9CA8E16C165A449200D2C534 /* sound5.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9CA8E162165A449200D2C534 /* sound5.wav */; };
+		9CA8E16D165A449200D2C534 /* sound4.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9CA8E163165A449200D2C534 /* sound4.wav */; };
+		9CA8E16E165A449200D2C534 /* sound3.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9CA8E164165A449200D2C534 /* sound3.wav */; };
+		9CA8E16F165A449200D2C534 /* sound2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9CA8E165165A449200D2C534 /* sound2.wav */; };
+		9CA8E170165A449200D2C534 /* sound1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9CA8E166165A449200D2C534 /* sound1.wav */; };
+		9CA8E171165A449200D2C534 /* sound0.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9CA8E167165A449200D2C534 /* sound0.wav */; };
+		9CCD8F1716539E7A007F490B /* GamesInProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CCD8F1616539E79007F490B /* GamesInProgress.m */; };
 		9CEAF5CC162C3E5700BBFA0B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CEAF5CB162C3E5700BBFA0B /* QuartzCore.framework */; };
 		9CEAF5CE162C3E5800BBFA0B /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CEAF5CD162C3E5700BBFA0B /* OpenGLES.framework */; };
 		9CEAF5D0162C3E5800BBFA0B /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CEAF5CF162C3E5800BBFA0B /* OpenAL.framework */; };
@@ -133,9 +150,47 @@
 		9CEAF757162C3E5B00BBFA0B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEAF756162C3E5B00BBFA0B /* AppDelegate.m */; };
 		9CEAF75A162C3E5B00BBFA0B /* HelloWorldLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEAF759162C3E5B00BBFA0B /* HelloWorldLayer.m */; };
 		9CEAF75D162C3E5B00BBFA0B /* IntroLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEAF75C162C3E5B00BBFA0B /* IntroLayer.m */; };
+		9CEAF768162D531700BBFA0B /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CEAF767162D531700BBFA0B /* FacebookSDK.framework */; };
+		9CEAF76C162D532700BBFA0B /* FacebookSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9CEAF76A162D532700BBFA0B /* FacebookSDKResources.bundle */; };
+		9CEAF76D162D532700BBFA0B /* FBUserSettingsViewResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9CEAF76B162D532700BBFA0B /* FBUserSettingsViewResources.bundle */; };
+		9CEAF771162D542800BBFA0B /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CEAF76E162D542800BBFA0B /* Accounts.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		9CEAF776162D5B3E00BBFA0B /* LoginLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEAF775162D5B3E00BBFA0B /* LoginLayer.m */; };
+		9CEAF77C162D5E1E00BBFA0B /* BasicButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEAF779162D5E1E00BBFA0B /* BasicButton.m */; };
+		9CEAF77D162D5E1E00BBFA0B /* PGLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEAF77B162D5E1E00BBFA0B /* PGLabel.m */; };
+		9CEAF784162D803600BBFA0B /* GameLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEAF783162D803500BBFA0B /* GameLayer.m */; };
+		9CEAF78B162E9C2A00BBFA0B /* Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEAF78A162E9C2A00BBFA0B /* Utilities.m */; };
+		9CEAF78E162EE95C00BBFA0B /* SceneManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEAF78D162EE95C00BBFA0B /* SceneManager.m */; };
+		9CEAF791162EFCD200BBFA0B /* ChooseProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEAF790162EFCD100BBFA0B /* ChooseProfile.m */; };
+		9CEAF7951630053500BBFA0B /* FacebookManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEAF7941630053500BBFA0B /* FacebookManager.m */; };
+		9CEAF79916303C0700BBFA0B /* GameData.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEAF79816303C0700BBFA0B /* GameData.m */; };
+		D267F581168E19FC001D81A5 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D267F580168E19FC001D81A5 /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		D267F584168E1A01001D81A5 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D267F583168E1A01001D81A5 /* AdSupport.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9C08C201165BE61200AFD9BF /* MessageLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageLayer.h; sourceTree = "<group>"; };
+		9C08C202165BE61200AFD9BF /* MessageLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageLayer.m; sourceTree = "<group>"; };
+		9C8FF3661681C994003764A9 /* MessageDisplayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageDisplayer.h; sourceTree = "<group>"; };
+		9C8FF3671681C995003764A9 /* MessageDisplayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageDisplayer.m; sourceTree = "<group>"; };
+		9CA2CDC91635923100E15BFB /* GameManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameManager.h; sourceTree = "<group>"; };
+		9CA2CDCA1635923100E15BFB /* GameManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameManager.m; sourceTree = "<group>"; };
+		9CA2CDCD163592CF00E15BFB /* UrlConnectionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UrlConnectionManager.h; sourceTree = "<group>"; };
+		9CA2CDCE163592CF00E15BFB /* UrlConnectionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UrlConnectionManager.m; sourceTree = "<group>"; };
+		9CA8E150165A302B00D2C534 /* PlayGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayGame.h; sourceTree = "<group>"; };
+		9CA8E151165A302B00D2C534 /* PlayGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayGame.m; sourceTree = "<group>"; };
+		9CA8E158165A391100D2C534 /* blank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blank.png; sourceTree = "<group>"; };
+		9CA8E15E165A449200D2C534 /* sound9.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sound9.wav; sourceTree = "<group>"; };
+		9CA8E15F165A449200D2C534 /* sound8.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sound8.wav; sourceTree = "<group>"; };
+		9CA8E160165A449200D2C534 /* sound7.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sound7.wav; sourceTree = "<group>"; };
+		9CA8E161165A449200D2C534 /* sound6.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sound6.wav; sourceTree = "<group>"; };
+		9CA8E162165A449200D2C534 /* sound5.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sound5.wav; sourceTree = "<group>"; };
+		9CA8E163165A449200D2C534 /* sound4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sound4.wav; sourceTree = "<group>"; };
+		9CA8E164165A449200D2C534 /* sound3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sound3.wav; sourceTree = "<group>"; };
+		9CA8E165165A449200D2C534 /* sound2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sound2.wav; sourceTree = "<group>"; };
+		9CA8E166165A449200D2C534 /* sound1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sound1.wav; sourceTree = "<group>"; };
+		9CA8E167165A449200D2C534 /* sound0.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sound0.wav; sourceTree = "<group>"; };
+		9CCD8F1516539E79007F490B /* GamesInProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GamesInProgress.h; sourceTree = "<group>"; };
+		9CCD8F1616539E79007F490B /* GamesInProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GamesInProgress.m; sourceTree = "<group>"; };
 		9CEAF5C7162C3E5700BBFA0B /* GuessMyFriend.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuessMyFriend.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CEAF5CB162C3E5700BBFA0B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		9CEAF5CD162C3E5700BBFA0B /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -398,6 +453,30 @@
 		9CEAF759162C3E5B00BBFA0B /* HelloWorldLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelloWorldLayer.m; sourceTree = "<group>"; };
 		9CEAF75B162C3E5B00BBFA0B /* IntroLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IntroLayer.h; sourceTree = "<group>"; };
 		9CEAF75C162C3E5B00BBFA0B /* IntroLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IntroLayer.m; sourceTree = "<group>"; };
+		9CEAF767162D531700BBFA0B /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
+		9CEAF76A162D532700BBFA0B /* FacebookSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = FacebookSDKResources.bundle; path = ../../FacebookSDK/FacebookSDK.framework/Versions/A/Resources/FacebookSDKResources.bundle; sourceTree = "<group>"; };
+		9CEAF76B162D532700BBFA0B /* FBUserSettingsViewResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = FBUserSettingsViewResources.bundle; path = ../../FacebookSDK/FacebookSDK.framework/Versions/A/Resources/FBUserSettingsViewResources.bundle; sourceTree = "<group>"; };
+		9CEAF76E162D542800BBFA0B /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		9CEAF774162D5B3E00BBFA0B /* LoginLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginLayer.h; sourceTree = "<group>"; };
+		9CEAF775162D5B3E00BBFA0B /* LoginLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginLayer.m; sourceTree = "<group>"; };
+		9CEAF778162D5E1E00BBFA0B /* BasicButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicButton.h; sourceTree = "<group>"; };
+		9CEAF779162D5E1E00BBFA0B /* BasicButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicButton.m; sourceTree = "<group>"; };
+		9CEAF77A162D5E1E00BBFA0B /* PGLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGLabel.h; sourceTree = "<group>"; };
+		9CEAF77B162D5E1E00BBFA0B /* PGLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGLabel.m; sourceTree = "<group>"; };
+		9CEAF782162D803500BBFA0B /* GameLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameLayer.h; sourceTree = "<group>"; };
+		9CEAF783162D803500BBFA0B /* GameLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameLayer.m; sourceTree = "<group>"; };
+		9CEAF789162E9C2A00BBFA0B /* Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Utilities.h; path = ../Utilities.h; sourceTree = "<group>"; };
+		9CEAF78A162E9C2A00BBFA0B /* Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Utilities.m; path = ../Utilities.m; sourceTree = "<group>"; };
+		9CEAF78C162EE95C00BBFA0B /* SceneManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneManager.h; sourceTree = "<group>"; };
+		9CEAF78D162EE95C00BBFA0B /* SceneManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SceneManager.m; sourceTree = "<group>"; };
+		9CEAF78F162EFCD100BBFA0B /* ChooseProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseProfile.h; sourceTree = "<group>"; };
+		9CEAF790162EFCD100BBFA0B /* ChooseProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseProfile.m; sourceTree = "<group>"; };
+		9CEAF7931630053500BBFA0B /* FacebookManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookManager.h; sourceTree = "<group>"; };
+		9CEAF7941630053500BBFA0B /* FacebookManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacebookManager.m; sourceTree = "<group>"; };
+		9CEAF79716303C0700BBFA0B /* GameData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameData.h; sourceTree = "<group>"; };
+		9CEAF79816303C0700BBFA0B /* GameData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameData.m; sourceTree = "<group>"; };
+		D267F580168E19FC001D81A5 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		D267F583168E1A01001D81A5 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -405,6 +484,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D267F584168E1A01001D81A5 /* AdSupport.framework in Frameworks */,
+				D267F581168E19FC001D81A5 /* Social.framework in Frameworks */,
+				9CEAF771162D542800BBFA0B /* Accounts.framework in Frameworks */,
 				9CEAF5CC162C3E5700BBFA0B /* QuartzCore.framework in Frameworks */,
 				9CEAF5CE162C3E5800BBFA0B /* OpenGLES.framework in Frameworks */,
 				9CEAF5D0162C3E5800BBFA0B /* OpenAL.framework in Frameworks */,
@@ -414,6 +496,7 @@
 				9CEAF5D8162C3E5800BBFA0B /* Foundation.framework in Frameworks */,
 				9CEAF5DA162C3E5800BBFA0B /* CoreGraphics.framework in Frameworks */,
 				9CEAF5DC162C3E5800BBFA0B /* GameKit.framework in Frameworks */,
+				9CEAF768162D531700BBFA0B /* FacebookSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -440,6 +523,12 @@
 		9CEAF5CA162C3E5700BBFA0B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D267F583168E1A01001D81A5 /* AdSupport.framework */,
+				D267F580168E19FC001D81A5 /* Social.framework */,
+				9CEAF76E162D542800BBFA0B /* Accounts.framework */,
+				9CEAF76A162D532700BBFA0B /* FacebookSDKResources.bundle */,
+				9CEAF76B162D532700BBFA0B /* FBUserSettingsViewResources.bundle */,
+				9CEAF767162D531700BBFA0B /* FacebookSDK.framework */,
 				9CEAF5CB162C3E5700BBFA0B /* QuartzCore.framework */,
 				9CEAF5CD162C3E5700BBFA0B /* OpenGLES.framework */,
 				9CEAF5CF162C3E5800BBFA0B /* OpenAL.framework */,
@@ -456,6 +545,9 @@
 		9CEAF5DD162C3E5800BBFA0B /* GuessMyFriend */ = {
 			isa = PBXGroup;
 			children = (
+				9CEAF79616303BB200BBFA0B /* Game */,
+				9CEAF7921630049C00BBFA0B /* Facebook */,
+				9CEAF777162D5E1E00BBFA0B /* utils */,
 				9CEAF755162C3E5B00BBFA0B /* AppDelegate.h */,
 				9CEAF756162C3E5B00BBFA0B /* AppDelegate.m */,
 				9CEAF758162C3E5B00BBFA0B /* HelloWorldLayer.h */,
@@ -465,6 +557,22 @@
 				9CEAF5DE162C3E5800BBFA0B /* Resources */,
 				9CEAF5F8162C3E5800BBFA0B /* libs */,
 				9CEAF751162C3E5B00BBFA0B /* Supporting Files */,
+				9CEAF774162D5B3E00BBFA0B /* LoginLayer.h */,
+				9CEAF775162D5B3E00BBFA0B /* LoginLayer.m */,
+				9CEAF782162D803500BBFA0B /* GameLayer.h */,
+				9CEAF783162D803500BBFA0B /* GameLayer.m */,
+				9CEAF78C162EE95C00BBFA0B /* SceneManager.h */,
+				9CEAF78D162EE95C00BBFA0B /* SceneManager.m */,
+				9CEAF78F162EFCD100BBFA0B /* ChooseProfile.h */,
+				9CEAF790162EFCD100BBFA0B /* ChooseProfile.m */,
+				9CCD8F1516539E79007F490B /* GamesInProgress.h */,
+				9CCD8F1616539E79007F490B /* GamesInProgress.m */,
+				9CA8E150165A302B00D2C534 /* PlayGame.h */,
+				9CA8E151165A302B00D2C534 /* PlayGame.m */,
+				9C08C201165BE61200AFD9BF /* MessageLayer.h */,
+				9C08C202165BE61200AFD9BF /* MessageLayer.m */,
+				9C8FF3661681C994003764A9 /* MessageDisplayer.h */,
+				9C8FF3671681C995003764A9 /* MessageDisplayer.m */,
 			);
 			path = GuessMyFriend;
 			sourceTree = "<group>";
@@ -472,6 +580,17 @@
 		9CEAF5DE162C3E5800BBFA0B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9CA8E15E165A449200D2C534 /* sound9.wav */,
+				9CA8E15F165A449200D2C534 /* sound8.wav */,
+				9CA8E160165A449200D2C534 /* sound7.wav */,
+				9CA8E161165A449200D2C534 /* sound6.wav */,
+				9CA8E162165A449200D2C534 /* sound5.wav */,
+				9CA8E163165A449200D2C534 /* sound4.wav */,
+				9CA8E164165A449200D2C534 /* sound3.wav */,
+				9CA8E165165A449200D2C534 /* sound2.wav */,
+				9CA8E166165A449200D2C534 /* sound1.wav */,
+				9CA8E167165A449200D2C534 /* sound0.wav */,
+				9CA8E158165A391100D2C534 /* blank.png */,
 				9CEAF5DF162C3E5800BBFA0B /* Default.png */,
 				9CEAF5E1162C3E5800BBFA0B /* Default-Landscape~ipad.png */,
 				9CEAF5E3162C3E5800BBFA0B /* fps_images.png */,
@@ -832,6 +951,41 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		9CEAF777162D5E1E00BBFA0B /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				9CEAF789162E9C2A00BBFA0B /* Utilities.h */,
+				9CEAF78A162E9C2A00BBFA0B /* Utilities.m */,
+				9CEAF778162D5E1E00BBFA0B /* BasicButton.h */,
+				9CEAF779162D5E1E00BBFA0B /* BasicButton.m */,
+				9CEAF77A162D5E1E00BBFA0B /* PGLabel.h */,
+				9CEAF77B162D5E1E00BBFA0B /* PGLabel.m */,
+				9CA2CDCD163592CF00E15BFB /* UrlConnectionManager.h */,
+				9CA2CDCE163592CF00E15BFB /* UrlConnectionManager.m */,
+			);
+			path = utils;
+			sourceTree = "<group>";
+		};
+		9CEAF7921630049C00BBFA0B /* Facebook */ = {
+			isa = PBXGroup;
+			children = (
+				9CEAF7931630053500BBFA0B /* FacebookManager.h */,
+				9CEAF7941630053500BBFA0B /* FacebookManager.m */,
+			);
+			name = Facebook;
+			sourceTree = "<group>";
+		};
+		9CEAF79616303BB200BBFA0B /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				9CEAF79716303C0700BBFA0B /* GameData.h */,
+				9CEAF79816303C0700BBFA0B /* GameData.m */,
+				9CA2CDC91635923100E15BFB /* GameManager.h */,
+				9CA2CDCA1635923100E15BFB /* GameManager.m */,
+			);
+			name = Game;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -895,6 +1049,19 @@
 				9CEAF5F4162C3E5800BBFA0B /* Icon@2x.png in Resources */,
 				9CEAF5F7162C3E5800BBFA0B /* iTunesArtwork in Resources */,
 				9CEAF735162C3E5B00BBFA0B /* ChangeLog in Resources */,
+				9CEAF76C162D532700BBFA0B /* FacebookSDKResources.bundle in Resources */,
+				9CEAF76D162D532700BBFA0B /* FBUserSettingsViewResources.bundle in Resources */,
+				9CA8E159165A391100D2C534 /* blank.png in Resources */,
+				9CA8E168165A449200D2C534 /* sound9.wav in Resources */,
+				9CA8E169165A449200D2C534 /* sound8.wav in Resources */,
+				9CA8E16A165A449200D2C534 /* sound7.wav in Resources */,
+				9CA8E16B165A449200D2C534 /* sound6.wav in Resources */,
+				9CA8E16C165A449200D2C534 /* sound5.wav in Resources */,
+				9CA8E16D165A449200D2C534 /* sound4.wav in Resources */,
+				9CA8E16E165A449200D2C534 /* sound3.wav in Resources */,
+				9CA8E16F165A449200D2C534 /* sound2.wav in Resources */,
+				9CA8E170165A449200D2C534 /* sound1.wav in Resources */,
+				9CA8E171165A449200D2C534 /* sound0.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1009,6 +1176,21 @@
 				9CEAF757162C3E5B00BBFA0B /* AppDelegate.m in Sources */,
 				9CEAF75A162C3E5B00BBFA0B /* HelloWorldLayer.m in Sources */,
 				9CEAF75D162C3E5B00BBFA0B /* IntroLayer.m in Sources */,
+				9CEAF776162D5B3E00BBFA0B /* LoginLayer.m in Sources */,
+				9CEAF77C162D5E1E00BBFA0B /* BasicButton.m in Sources */,
+				9CEAF77D162D5E1E00BBFA0B /* PGLabel.m in Sources */,
+				9CEAF784162D803600BBFA0B /* GameLayer.m in Sources */,
+				9CEAF78B162E9C2A00BBFA0B /* Utilities.m in Sources */,
+				9CEAF78E162EE95C00BBFA0B /* SceneManager.m in Sources */,
+				9CEAF791162EFCD200BBFA0B /* ChooseProfile.m in Sources */,
+				9CEAF7951630053500BBFA0B /* FacebookManager.m in Sources */,
+				9CEAF79916303C0700BBFA0B /* GameData.m in Sources */,
+				9CA2CDCB1635923100E15BFB /* GameManager.m in Sources */,
+				9CA2CDCF163592CF00E15BFB /* UrlConnectionManager.m in Sources */,
+				9CCD8F1716539E7A007F490B /* GamesInProgress.m in Sources */,
+				9CA8E152165A302B00D2C534 /* PlayGame.m in Sources */,
+				9C08C203165BE61200AFD9BF /* MessageLayer.m in Sources */,
+				9C8FF3681681C995003764A9 /* MessageDisplayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1030,7 +1212,7 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1049,7 +1231,7 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1059,7 +1241,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer: tolga SAGLAM (G9PY9PPD9R)";
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../FacebookSDK\"",
+				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = GuessMyFriend/Prefix.pch;
@@ -1068,8 +1255,11 @@
 				OTHER_LDFLAGS = (
 					"-lz",
 					"-ObjC",
+					"-lsqlite3.0",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "544CC0FB-6E51-4E4B-B645-DD7AACF6554B";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1078,7 +1268,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer: tolga SAGLAM (G9PY9PPD9R)";
 				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../FacebookSDK\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = GuessMyFriend/Prefix.pch;
 				HEADER_SEARCH_PATHS = "\"GuessMyFriend/libs/kazmath/include\"";
@@ -1086,8 +1281,11 @@
 				OTHER_LDFLAGS = (
 					"-lz",
 					"-ObjC",
+					"-lsqlite3.0",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "544CC0FB-6E51-4E4B-B645-DD7AACF6554B";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};
@@ -1112,6 +1310,7 @@
 				9CEAF762162C3E5B00BBFA0B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

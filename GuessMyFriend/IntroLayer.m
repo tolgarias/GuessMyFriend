@@ -10,7 +10,8 @@
 // Import the interfaces
 #import "IntroLayer.h"
 #import "HelloWorldLayer.h"
-
+//#import "LoginLayer.h"
+//#import "GameLayer.h"
 
 #pragma mark - IntroLayer
 
@@ -60,6 +61,15 @@
 
 -(void) makeTransition:(ccTime)dt
 {
-	[[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[HelloWorldLayer scene] withColor:ccWHITE]];
+    if(FBSession.activeSession.state == FBSessionStateCreatedTokenLoaded && FBSession.activeSession.isOpen){
+        //[[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[GameLayer scene] withColor:ccWHITE]];
+        [[SceneManager sharedSceneManager] changeScene:kProfileLayer];
+    }
+    else {
+        //[[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[LoginLayer scene] withColor:ccWHITE]];
+        //[[SceneManager sharedSceneManager] changeScene:kLoginLayer];
+        [[FacebookManager sharedInstance] openSession];
+        
+    }
 }
 @end

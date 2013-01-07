@@ -13,7 +13,9 @@
 
 @implementation AppController
 
-@synthesize window=window_, navController=navController_, director=director_;
+@synthesize window=window_, navController=navController_, director=director_,friendController = friendController_;
+@synthesize selectedFriends;
+@synthesize audioPlayer;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -35,7 +37,7 @@
 	director_.wantsFullScreenLayout = YES;
 
 	// Display FSP and SPF
-	[director_ setDisplayStats:YES];
+	[director_ setDisplayStats:NO];
 
 	// set FPS at 60
 	[director_ setAnimationInterval:1.0/60];
@@ -73,9 +75,8 @@
 	[CCTexture2D PVRImagesHavePremultipliedAlpha:YES];
 
 	// and add the scene to the stack. The director will run it when it automatically when the view is displayed.
-	[director_ pushScene: [IntroLayer scene]]; 
-
-	
+	[director_ pushScene: [IntroLayer scene]];
+    
 	// Create a Navigation Controller with the Director
 	navController_ = [[UINavigationController alloc] initWithRootViewController:director_];
 	navController_.navigationBarHidden = YES;
@@ -107,6 +108,7 @@
 // call got rejected
 -(void) applicationDidBecomeActive:(UIApplication *)application
 {
+    [FBSession.activeSession handleDidBecomeActive];
 	if( [navController_ visibleViewController] == director_ )
 		[director_ resume];
 }
@@ -147,6 +149,62 @@
 	[navController_ release];
 
 	[super dealloc];
+}
+
+//#pragma mark FacebookConnection
+
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation
+{
+    return [FBSession.activeSession handleOpenURL:url];
+}
+
+
+//FriendSelection
+-(void) showFriendSelector {
+    self.friendController = [[FBFriendPickerViewController alloc] initWithNibName:nil bundle:nil];
+    self.friendController.delegate = self;
+    self.friendController.title = @"Select Friend to Play";
+    self.friendController.allowsMultipleSelection = false;
+    [self.friendController loadData];
+    navController_.navigationBarHidden = NO;
+    [self.navController pushViewController:self.friendController animated:true];
+    
+}
+
+-(void)friendPickerViewControllerSelectionDidChange:(FBFriendPickerViewController *)friendPicker {
+    self.selectedFriends = friendPicker.selection;
+    navController_.navigationBarHidden = YES;
+    [self.navController popViewControllerAnimated:YES];
+    //[[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[IntroLayer scene] withColor:ccWHITE]];
+    NSDictionary<FBGraphUser> *friend = [self.selectedFriends objectAtIndex:0];
+    
+    [[GameData sharedInstance] setOpponent:friend.id];
+    [GameData sharedInstance].opponentId = friend.id;
+    
+    [GameData sharedInstance].gameStatus=[NSNumber numberWithInt:0];
+    [GameData sharedInstance].stringLength=[NSNumber numberWithInt:3];
+    [[GameManager sharedInstance] createGameWithSelector:@selector(createGameResult:) delegate:self];
+    
+    //[[SceneManager sharedSceneManager] changeScene:kCreateGameLayer];
+    
+}
+
+- (void)playSound:(NSString *)sound format:(NSString *)format {
+    [[SimpleAudioEngine sharedEngine] playEffect:[NSString stringWithFormat:@"%@.%@",sound,format]];
+    
+}
+
+-(void) createGameResult:(NSDictionary*) jsonData{
+    NSDictionary* values = [jsonData objectForKey:@"values"];
+    NSNumber* gameId = (NSNumber*)[values objectForKey:@"gameId"];
+    [GameData sharedInstance].gameId = gameId;
+    [[SceneManager sharedSceneManager] changeScene:kCreateGameLayer];
+}
+-(void) showProfileScreen {
+    [[SceneManager sharedSceneManager] changeScene:kProfileLayer];
 }
 @end
 
