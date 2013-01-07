@@ -29,20 +29,57 @@
         [self addChild:backButton z:10];
         backButton.delegate = self;
         backButton.selector = @selector(onBackButtonPressed:);
+        paddingTop = 40;
+        paddingBottom = 30;
+        yBuffer = 0;
+        [self setIsTouchEnabled:YES];
         
     }
     return self;
 }
+
+-(void) ccTouchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+    //NSLog(@"1");
+}
+CGPoint  startPoint;
+-(void) ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    //NSLog(@"2");
+    for( UITouch *touch in touches ) {
+        startPoint = [touch locationInView: [touch view]];
+        startPoint = [[CCDirector sharedDirector] convertToGL: startPoint];
+        
+        //NSLog(@"x:%f,y:%f",startPoint.x,startPoint.y);
+        
+    }
+
+}
+
+-(void) ccTouchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
+    //NSLog(@"3");
+    for( UITouch *touch in touches ) {
+        CGPoint tPoint = [touch locationInView: [touch view]];
+        tPoint = [[CCDirector sharedDirector] convertToGL: startPoint];
+        double diffY = tPoint.y-startPoint.y;
+        if(diffY>10) {
+            yBuffer++;
+        }
+        else if(diffY<-10){
+            yBuffer--;
+            
+        }
+    }
+
+}
+
+
 -(void) gamesInProgressResult:(NSDictionary*)jsonData {
-    
-    
-   
     int x,y;
-    y=size.height-100;
+    y=size.height-paddingTop+yBuffer;
     x=80;
     
     CCLabelTTF *nameLabel = [CCLabelTTF labelWithString:@"Your turn" fontName:@"Marker Felt" fontSize:20];
-    nameLabel.position = ccp(x, y+70);
+    nameLabel.position = ccp(x, y);
+    y-=70;
     [self addChild:nameLabel];
     int index=0;
     if (jsonData) {

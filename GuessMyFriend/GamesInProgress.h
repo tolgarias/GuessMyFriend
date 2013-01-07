@@ -17,6 +17,10 @@
 @interface GamesInProgress :CCLayer {
     //CCScrollView * view;
     CGSize size;
+    int paddingTop;
+    int paddingBottom;
+    int yBuffer;
+    int offScreenHeight;
 }
 @property (retain,atomic) NSMutableArray* games;
 
