@@ -25,7 +25,7 @@
         size = [[CCDirector sharedDirector] winSize];
         games= [[NSMutableArray alloc] init];
         [[GameManager sharedInstance] getGamesInProgressWithSelector:@selector(gamesInProgressResult:) delegate:self];
-        BasicButton* backButton = [[Utilities sharedInstance] makeButton:@"Icon.png" text:@"Back" x:size.width/2 y:25 param:1];
+        BasicButton* backButton = [[Utilities sharedInstance] makeButton:@"Icon.png" text:@"Back" x:size.width/2 y:25 param:-1];
         [self addChild:backButton z:10];
         backButton.delegate = self;
         backButton.selector = @selector(onBackButtonPressed:);
@@ -40,6 +40,7 @@
 
 -(void) ccTouchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
     //NSLog(@"1");
+    ySpeed = 0;
 }
 CGPoint  startPoint;
 -(void) ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
@@ -61,10 +62,10 @@ CGPoint  startPoint;
         tPoint = [[CCDirector sharedDirector] convertToGL: startPoint];
         double diffY = tPoint.y-startPoint.y;
         if(diffY>10) {
-            yBuffer++;
+            ySpeed=3;
         }
         else if(diffY<-10){
-            yBuffer--;
+            ySpeed=-3;
             
         }
     }
@@ -74,7 +75,7 @@ CGPoint  startPoint;
 
 -(void) gamesInProgressResult:(NSDictionary*)jsonData {
     int x,y;
-    y=size.height-paddingTop+yBuffer;
+    y=size.height-paddingTop;
     x=80;
     
     CCLabelTTF *nameLabel = [CCLabelTTF labelWithString:@"Your turn" fontName:@"Marker Felt" fontSize:20];
@@ -120,6 +121,10 @@ CGPoint  startPoint;
             y-=150;
             index++;
         }
+        if (y+150<0) {
+            offScreenHeight = y*-1;
+        }
+        [self schedule:@selector(tick:) interval:1.0f/60.0f];
     }
 }
 -(void) displayWaitingGame:(int)x y:(int)y myTurn:(BOOL)myTurn name:(NSString *)name image:(NSString *)image stringLength:(int)stringLength index:(int)index{
@@ -170,5 +175,43 @@ CGPoint  startPoint;
 }
 -(void) onBackButtonPressed:(id) sender {
     [[SceneManager sharedSceneManager] changeScene:kProfileLayer];
+}
+-(void) setObjectPositions {
+    for (CCNode* node in self.children) {
+        bool setPosition = TRUE;
+        if ([node isKindOfClass:[BasicButton class]]) {
+            BasicButton* b = (BasicButton*) node;
+            if (b.param_1<0) {
+                setPosition = false;
+            }
+        }
+        if(setPosition)
+        node.position = ccp(node.position.x,node.position.y+ySpeed);
+    }
+}
+-(void) tick:(ccTime*) dt {
+    if(ySpeed>0){
+       if(yBuffer+ySpeed>offScreenHeight){
+        ySpeed =0;
+       }
+       else {
+           yBuffer+=ySpeed;
+           // NSLog(@"ySpeed:%i",ySpeed);
+       }
+    }
+    
+    if(ySpeed<0){
+        
+    if(yBuffer+ySpeed<0){
+        ySpeed =0;
+    }
+    else {
+        yBuffer+=ySpeed;
+        //NSLog(@"ySpeed:%i",ySpeed);
+    }
+    }
+
+
+    [self setObjectPositions];
 }
 @end

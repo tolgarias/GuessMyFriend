@@ -21,11 +21,12 @@
     int paddingBottom;
     int yBuffer;
     int offScreenHeight;
+    int ySpeed;
 }
 @property (retain,atomic) NSMutableArray* games;
 
 +(CCScene*) scene;
 -(void) displayWaitingGame:(int) x y:(int)y myTurn:(BOOL) myTurn name:(NSString*) name image:(NSString*) image stringLength:(int)stringLength  index:(int) index;
 //-(void) displayWaitingGame:(int) x y:(int)y myTurn:(BOOL) myTurn name:(NSString*) name image:(NSString*) image index:(int) index;
-
+-(void) setObjectPositions;
 @end
