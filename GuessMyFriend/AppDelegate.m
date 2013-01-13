@@ -174,6 +174,8 @@
     
 }
 
+
+
 -(void)friendPickerViewControllerSelectionDidChange:(FBFriendPickerViewController *)friendPicker {
     self.selectedFriends = friendPicker.selection;
     navController_.navigationBarHidden = YES;

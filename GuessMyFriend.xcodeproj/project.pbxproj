@@ -8,9 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		9C08C203165BE61200AFD9BF /* MessageLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C08C202165BE61200AFD9BF /* MessageLayer.m */; };
-		9C4FD61C16A009EC005B48A5 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C4FD61B16A009EC005B48A5 /* FacebookSDK.framework */; };
-		9C4FD61F16A009F9005B48A5 /* FacebookSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9C4FD61D16A009F9005B48A5 /* FacebookSDKResources.bundle */; };
-		9C4FD62016A009F9005B48A5 /* FBUserSettingsViewResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9C4FD61E16A009F9005B48A5 /* FBUserSettingsViewResources.bundle */; };
 		9C8FF3681681C995003764A9 /* MessageDisplayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C8FF3671681C995003764A9 /* MessageDisplayer.m */; };
 		9CA2CDCB1635923100E15BFB /* GameManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA2CDCA1635923100E15BFB /* GameManager.m */; };
 		9CA2CDCF163592CF00E15BFB /* UrlConnectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA2CDCE163592CF00E15BFB /* UrlConnectionManager.m */; };
@@ -165,14 +162,15 @@
 		9CEAF79916303C0700BBFA0B /* GameData.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEAF79816303C0700BBFA0B /* GameData.m */; };
 		D267F581168E19FC001D81A5 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D267F580168E19FC001D81A5 /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		D267F584168E1A01001D81A5 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D267F583168E1A01001D81A5 /* AdSupport.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		D2F0CDB716A1C229001F79BF /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2F0CDB616A1C229001F79BF /* FacebookSDK.framework */; };
+		D2F0CDBA16A1C23E001F79BF /* FacebookSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D2F0CDB816A1C23E001F79BF /* FacebookSDKResources.bundle */; };
+		D2F0CDBB16A1C23E001F79BF /* FBUserSettingsViewResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D2F0CDB916A1C23E001F79BF /* FBUserSettingsViewResources.bundle */; };
+		D2F0CDBF16A1C75A001F79BF /* UserData.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F0CDBE16A1C75A001F79BF /* UserData.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		9C08C201165BE61200AFD9BF /* MessageLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageLayer.h; sourceTree = "<group>"; };
 		9C08C202165BE61200AFD9BF /* MessageLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageLayer.m; sourceTree = "<group>"; };
-		9C4FD61B16A009EC005B48A5 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../Documents/FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
-		9C4FD61D16A009F9005B48A5 /* FacebookSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = FacebookSDKResources.bundle; path = ../Documents/FacebookSDK/FacebookSDK.framework/Versions/A/Resources/FacebookSDKResources.bundle; sourceTree = "<group>"; };
-		9C4FD61E16A009F9005B48A5 /* FBUserSettingsViewResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = FBUserSettingsViewResources.bundle; path = ../Documents/FacebookSDK/FacebookSDK.framework/Versions/A/Resources/FBUserSettingsViewResources.bundle; sourceTree = "<group>"; };
 		9C8FF3661681C994003764A9 /* MessageDisplayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageDisplayer.h; sourceTree = "<group>"; };
 		9C8FF3671681C995003764A9 /* MessageDisplayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageDisplayer.m; sourceTree = "<group>"; };
 		9CA2CDC91635923100E15BFB /* GameManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameManager.h; sourceTree = "<group>"; };
@@ -477,6 +475,11 @@
 		9CEAF79816303C0700BBFA0B /* GameData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameData.m; sourceTree = "<group>"; };
 		D267F580168E19FC001D81A5 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		D267F583168E1A01001D81A5 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		D2F0CDB616A1C229001F79BF /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
+		D2F0CDB816A1C23E001F79BF /* FacebookSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FacebookSDKResources.bundle; sourceTree = "<group>"; };
+		D2F0CDB916A1C23E001F79BF /* FBUserSettingsViewResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FBUserSettingsViewResources.bundle; sourceTree = "<group>"; };
+		D2F0CDBD16A1C75A001F79BF /* UserData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserData.h; sourceTree = "<group>"; };
+		D2F0CDBE16A1C75A001F79BF /* UserData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserData.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -496,7 +499,7 @@
 				9CEAF5D8162C3E5800BBFA0B /* Foundation.framework in Frameworks */,
 				9CEAF5DA162C3E5800BBFA0B /* CoreGraphics.framework in Frameworks */,
 				9CEAF5DC162C3E5800BBFA0B /* GameKit.framework in Frameworks */,
-				9C4FD61C16A009EC005B48A5 /* FacebookSDK.framework in Frameworks */,
+				D2F0CDB716A1C229001F79BF /* FacebookSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -523,9 +526,9 @@
 		9CEAF5CA162C3E5700BBFA0B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9C4FD61D16A009F9005B48A5 /* FacebookSDKResources.bundle */,
-				9C4FD61E16A009F9005B48A5 /* FBUserSettingsViewResources.bundle */,
-				9C4FD61B16A009EC005B48A5 /* FacebookSDK.framework */,
+				D2F0CDB816A1C23E001F79BF /* FacebookSDKResources.bundle */,
+				D2F0CDB916A1C23E001F79BF /* FBUserSettingsViewResources.bundle */,
+				D2F0CDB616A1C229001F79BF /* FacebookSDK.framework */,
 				D267F583168E1A01001D81A5 /* AdSupport.framework */,
 				D267F580168E19FC001D81A5 /* Social.framework */,
 				9CEAF76E162D542800BBFA0B /* Accounts.framework */,
@@ -545,6 +548,7 @@
 		9CEAF5DD162C3E5800BBFA0B /* GuessMyFriend */ = {
 			isa = PBXGroup;
 			children = (
+				D2F0CDBC16A1C73D001F79BF /* User */,
 				9CEAF79616303BB200BBFA0B /* Game */,
 				9CEAF7921630049C00BBFA0B /* Facebook */,
 				9CEAF777162D5E1E00BBFA0B /* utils */,
@@ -986,6 +990,15 @@
 			name = Game;
 			sourceTree = "<group>";
 		};
+		D2F0CDBC16A1C73D001F79BF /* User */ = {
+			isa = PBXGroup;
+			children = (
+				D2F0CDBD16A1C75A001F79BF /* UserData.h */,
+				D2F0CDBE16A1C75A001F79BF /* UserData.m */,
+			);
+			name = User;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1060,8 +1073,8 @@
 				9CA8E16F165A449200D2C534 /* sound2.wav in Resources */,
 				9CA8E170165A449200D2C534 /* sound1.wav in Resources */,
 				9CA8E171165A449200D2C534 /* sound0.wav in Resources */,
-				9C4FD61F16A009F9005B48A5 /* FacebookSDKResources.bundle in Resources */,
-				9C4FD62016A009F9005B48A5 /* FBUserSettingsViewResources.bundle in Resources */,
+				D2F0CDBA16A1C23E001F79BF /* FacebookSDKResources.bundle in Resources */,
+				D2F0CDBB16A1C23E001F79BF /* FBUserSettingsViewResources.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1191,6 +1204,7 @@
 				9CA8E152165A302B00D2C534 /* PlayGame.m in Sources */,
 				9C08C203165BE61200AFD9BF /* MessageLayer.m in Sources */,
 				9C8FF3681681C995003764A9 /* MessageDisplayer.m in Sources */,
+				D2F0CDBF16A1C75A001F79BF /* UserData.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1247,6 +1261,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/../../FacebookSDK\"",
 					"\"$(SRCROOT)/../Documents/FacebookSDK\"",
+					"\"$(SRCROOT)\"",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1275,6 +1290,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/../../FacebookSDK\"",
 					"\"$(SRCROOT)/../Documents/FacebookSDK\"",
+					"\"$(SRCROOT)\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = GuessMyFriend/Prefix.pch;

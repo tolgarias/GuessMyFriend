@@ -11,6 +11,7 @@
 #import <FacebookSDK/FacebookSDK.h>
 #import "Utilities.h"
 #import "GameData.h"
+#import "UserData.h"
 @interface GameLayer : CCLayer
 
 +(CCScene*) scene;
