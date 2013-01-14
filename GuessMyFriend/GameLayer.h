@@ -12,7 +12,10 @@
 #import "Utilities.h"
 #import "GameData.h"
 #import "UserData.h"
-@interface GameLayer : CCLayer
+@interface GameLayer : CCLayer {
+    BasicButton* allFriendsButton;
+    BasicButton* playerFriendsButton;
+}
 
 +(CCScene*) scene;
 

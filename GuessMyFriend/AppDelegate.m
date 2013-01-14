@@ -16,7 +16,8 @@
 @synthesize window=window_, navController=navController_, director=director_,friendController = friendController_;
 @synthesize selectedFriends;
 @synthesize audioPlayer;
-
+@synthesize appInstalledFriends;
+@synthesize showAllFriends;
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
 	// Create the main window
@@ -163,13 +164,14 @@
 
 
 //FriendSelection
--(void) showFriendSelector {
+-(void) showFriendSelector:(BOOL) showAll {
     self.friendController = [[FBFriendPickerViewController alloc] initWithNibName:nil bundle:nil];
     self.friendController.delegate = self;
     self.friendController.title = @"Select Friend to Play";
     self.friendController.allowsMultipleSelection = false;
     [self.friendController loadData];
     navController_.navigationBarHidden = NO;
+    self.showAllFriends = showAll;
     [self.navController pushViewController:self.friendController animated:true];
     
 }
@@ -193,7 +195,21 @@
     //[[SceneManager sharedSceneManager] changeScene:kCreateGameLayer];
     
 }
-
+- (BOOL)friendPickerViewController:(FBFriendPickerViewController *)friendPicker shouldIncludeUser:(id<FBGraphUser>)user
+{
+    if(showAllFriends) {
+        return YES;
+    }
+    else {
+        if(appInstalledFriends==nil){
+            NSLog(@"appinstalledfriends is nil");
+        }
+        else if([appInstalledFriends containsObject:[user objectForKey:@"id"]]){
+            return YES;
+        }
+    }
+    return NO;
+}
 - (void)playSound:(NSString *)sound format:(NSString *)format {
     [[SimpleAudioEngine sharedEngine] playEffect:[NSString stringWithFormat:@"%@.%@",sound,format]];
     
@@ -207,6 +223,28 @@
 }
 -(void) showProfileScreen {
     [[SceneManager sharedSceneManager] changeScene:kProfileLayer];
+}
+-(void) getAppInstalledFriends{
+    NSString *query =
+    @"select uid from user where uid in (select uid2 from friend where uid1=me()) and is_app_user=1";
+    // Set up the query parameter
+    NSDictionary *queryParam =
+    [NSDictionary dictionaryWithObjectsAndKeys:query, @"q", nil];
+    // Make the API request that uses FQL
+    [FBRequestConnection startWithGraphPath:@"/fql"
+                                 parameters:queryParam
+                                 HTTPMethod:@"GET"
+                          completionHandler:^(FBRequestConnection *connection,
+                                              id result,
+                                              NSError *error) {
+                              if (error) {
+                                  NSLog(@"Error: %@", [error localizedDescription]);
+                              } else {
+                                  appInstalledFriends = (NSArray*)[result data];
+                                 
+                                  
+                              }
+                          }];
 }
 @end
 

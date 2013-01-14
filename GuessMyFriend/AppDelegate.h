@@ -20,6 +20,7 @@
 
 	CCDirectorIOS	*director_;							// weak ref
     FBFriendPickerViewController *friendController_;
+    
 }
 
 @property (strong,nonatomic) FBFriendPickerViewController *friendController;
@@ -29,14 +30,17 @@
 @property (readonly) UINavigationController *navController;
 @property (readonly) CCDirectorIOS *director;
 @property (nonatomic, retain) AVAudioPlayer *audioPlayer;
-
+@property (nonatomic,retain) NSArray* appInstalledFriends;
+@property (nonatomic,assign) BOOL showAllFriends;
 
 //-(void) sessionStateChanged:(FBSession*) session state:(FBSessionState)state error:(NSError*) error;
 //-(void) openSession;
--(void) showFriendSelector;
+-(void) showFriendSelector:(BOOL)showAll;
 
 - (void)playSound:(NSString *)sound format:(NSString *)format;
 
 -(void) showProfileScreen;
+
+-(void) getAppInstalledFriends;
 
 @end

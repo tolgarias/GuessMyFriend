@@ -28,6 +28,8 @@ static FacebookManager* sharedInstance;
         case FBSessionStateOpen:
         {
         	//[[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[GameLayer scene] withColor:ccWHITE]];
+            AppController *app = (AppController*) [[UIApplication sharedApplication] delegate];
+            [app getAppInstalledFriends];
             [[SceneManager sharedSceneManager] changeScene:kProfileLayer];
         }
             break;

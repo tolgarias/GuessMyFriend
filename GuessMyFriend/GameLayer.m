@@ -39,12 +39,29 @@
 
 
 -(void) onGamesButtonPressed:(id) sender {
-    
     [[SceneManager sharedSceneManager] changeScene:kGameInProgressLayer];
 }
 -(void) onCreateGameButtonPressed:(id) sender {
+    //AppController *app = (AppController*) [[UIApplication sharedApplication] delegate];
+    //[app showFriendSelector];
+    if(allFriendsButton.visible==NO) {
+        allFriendsButton.visible = YES;
+        playerFriendsButton.visible = YES;
+    }
+    else {
+        allFriendsButton.visible = NO;
+        playerFriendsButton.visible = NO;
+    }
+}
+
+-(void) onAllFriendsButtonPressed:(id) sender {
     AppController *app = (AppController*) [[UIApplication sharedApplication] delegate];
-    [app showFriendSelector];
+    [app showFriendSelector:YES];
+}
+
+-(void) onPlayerFriendsButtonPressed:(id) sender {
+    AppController *app = (AppController*) [[UIApplication sharedApplication] delegate];
+    [app showFriendSelector:NO];
 }
 
 -(void) displayProfileWithFql {
@@ -113,6 +130,18 @@
     BasicButton* createGame = [[Utilities sharedInstance] makeButton:@"Icon.png" text:@"Create Game" x:size.width/2+30 y:size.height-200 param:1];
     createGame.delegate = self;
     createGame.selector = @selector(onCreateGameButtonPressed:);
+    
+    allFriendsButton = [[Utilities sharedInstance] makeButton:@"Icon.png" text:@"All Users" x:size.width/2+50 y:size.height-260 param:1];
+    allFriendsButton.selector = @selector(onAllFriendsButtonPressed:);
+    allFriendsButton.delegate = self;
+    allFriendsButton.visible = NO;
+    [self addChild:allFriendsButton];
+    playerFriendsButton = [[Utilities sharedInstance] makeButton:@"Icon.png" text:@"players" x:size.width/2-5 y:size.height-260 param:1];
+    playerFriendsButton.selector = @selector(onPlayerFriendsButtonPressed:);
+    playerFriendsButton.delegate = self;
+    playerFriendsButton.visible = NO;
+    [self addChild:playerFriendsButton];
+    
     
     [self addChild:createGame];
     
