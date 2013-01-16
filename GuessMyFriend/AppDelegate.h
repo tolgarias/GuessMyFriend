@@ -30,14 +30,14 @@
 @property (readonly) UINavigationController *navController;
 @property (readonly) CCDirectorIOS *director;
 @property (nonatomic, retain) AVAudioPlayer *audioPlayer;
-@property (nonatomic,retain) NSArray* appInstalledFriends;
+@property (strong,nonatomic) NSArray* appInstalledFriends;
 @property (nonatomic,assign) BOOL showAllFriends;
 
 //-(void) sessionStateChanged:(FBSession*) session state:(FBSessionState)state error:(NSError*) error;
 //-(void) openSession;
 -(void) showFriendSelector:(BOOL)showAll;
 
-- (void)playSound:(NSString *)sound format:(NSString *)format;
+-(void)playSound:(NSString *)sound format:(NSString *)format;
 
 -(void) showProfileScreen;
 

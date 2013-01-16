@@ -88,7 +88,7 @@
 	
 	// make main window visible
 	[window_ makeKeyAndVisible];
-	
+    appInstalledFriends  = [[NSArray alloc] init];
 	return YES;
 }
 
@@ -169,6 +169,10 @@
     self.friendController.delegate = self;
     self.friendController.title = @"Select Friend to Play";
     self.friendController.allowsMultipleSelection = false;
+    if(showAll==NO){
+        NSSet *fields = [NSSet setWithObjects:@"installed", nil];
+        self.friendController.fieldsForRequest = fields;
+    }
     [self.friendController loadData];
     navController_.navigationBarHidden = NO;
     self.showAllFriends = showAll;
@@ -197,16 +201,14 @@
 }
 - (BOOL)friendPickerViewController:(FBFriendPickerViewController *)friendPicker shouldIncludeUser:(id<FBGraphUser>)user
 {
+    //[user objectForKey:]
+    //NSLog(@"count %i",[appInstalledFriends count]);
     if(showAllFriends) {
         return YES;
     }
     else {
-        if(appInstalledFriends==nil){
-            NSLog(@"appinstalledfriends is nil");
-        }
-        else if([appInstalledFriends containsObject:[user objectForKey:@"id"]]){
-            return YES;
-        }
+        BOOL installed = [user objectForKey:@"installed"] != nil;
+        return installed;
     }
     return NO;
 }
@@ -225,7 +227,7 @@
     [[SceneManager sharedSceneManager] changeScene:kProfileLayer];
 }
 -(void) getAppInstalledFriends{
-    NSString *query =
+ /*   NSString *query =
     @"select uid from user where uid in (select uid2 from friend where uid1=me()) and is_app_user=1";
     // Set up the query parameter
     NSDictionary *queryParam =
@@ -241,10 +243,9 @@
                                   NSLog(@"Error: %@", [error localizedDescription]);
                               } else {
                                   appInstalledFriends = (NSArray*)[result data];
-                                 
-                                  
+                                  NSLog(@"count:%i",[appInstalledFriends count]);
                               }
-                          }];
+                          }];*/
 }
 @end
 
