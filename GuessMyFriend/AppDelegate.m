@@ -218,10 +218,18 @@
 }
 
 -(void) createGameResult:(NSDictionary*) jsonData{
-    NSDictionary* values = [jsonData objectForKey:@"values"];
-    NSNumber* gameId = (NSNumber*)[values objectForKey:@"gameId"];
-    [GameData sharedInstance].gameId = gameId;
-    [[SceneManager sharedSceneManager] changeScene:kCreateGameLayer];
+    NSNumber* errorCode = (NSNumber*) [jsonData objectForKey:@"errorCode"];
+    if([errorCode intValue] == 1){
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"You can't create a game" message:@"There is an unfinished game" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [alert show];
+        [alert release];
+    }
+    else {
+        NSDictionary* values = [jsonData objectForKey:@"values"];
+        NSNumber* gameId = (NSNumber*)[values objectForKey:@"gameId"];
+        [GameData sharedInstance].gameId = gameId;
+        [[SceneManager sharedSceneManager] changeScene:kCreateGameLayer];
+    }
 }
 -(void) showProfileScreen {
     [[SceneManager sharedSceneManager] changeScene:kProfileLayer];
