@@ -26,6 +26,7 @@ typedef enum {
     MessageLayer* _m;
     int listenCounter;
     CCLabelTTF *lengthLabel;
+    CCLabelTTF *guessCountLabel;
     //MessageDisplayer* displayer;
     
     NSString* message1;

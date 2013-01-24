@@ -130,15 +130,26 @@
     CGSize size = [[CCDirector sharedDirector] winSize];
     NSString* headerString;
     NSLog(@"%i",[[GameData sharedInstance].gameStatus intValue]);
+ 
+   
+    
+    
+    
+    guessCountLabel = [CCLabelTTF labelWithString:@"" fontName:@"Marker Felt" fontSize:20];
+    guessCountLabel.position = ccp(size.width/2, 35);
+    [self addChild:guessCountLabel];
+    
     if([[GameData sharedInstance].gameStatus intValue]==0){
         headerString = @"Define your string";
     }
     else {
+        NSString* guessCountStr = [NSString stringWithFormat:@"Guess Count: %i",[[GameData sharedInstance].guessCount intValue]];
+        [guessCountLabel setString:guessCountStr];
         headerString = @"Follow the string";
         [self showMessageScreen:@"Wait 3 seconds" message2:@"" action:kPlayString];
-       
+        
     }
-   
+    
     CCLabelTTF *nameLabel = [CCLabelTTF labelWithString:headerString fontName:@"Marker Felt" fontSize:20];
     nameLabel.position = ccp(size.width/2, size.height-10);
     [self addChild:nameLabel];
@@ -248,6 +259,9 @@
         }
         else if(action == kAnswerIsWrong) {
             stringIndex = 0;
+            [GameData sharedInstance].guessCount = [NSNumber numberWithInt:[[GameData sharedInstance].guessCount intValue]-1];
+            NSString* guessCountStr = [NSString stringWithFormat:@"Guess Count: %i",[[GameData sharedInstance].guessCount intValue]];
+            [guessCountLabel setString:guessCountStr];
             [tempString removeAllObjects];
         }
     }

@@ -163,7 +163,8 @@ CGPoint  startPoint;
     [GameData sharedInstance].gameId = gameId;
     [GameData sharedInstance].gameStatus = [NSNumber numberWithInt:1];
     [GameData sharedInstance].stringLength = stringLength;
-    [GameData sharedInstance].opponentId = (NSString*)[datas objectForKey:@"opponentId"];;
+    [GameData sharedInstance].opponentId = (NSString*)[datas objectForKey:@"opponentId"];
+    [GameData sharedInstance].guessCount = [NSNumber numberWithInt:3];
     
     NSArray* stringArray = [string componentsSeparatedByString:@","];
     [GameData sharedInstance].string = [[NSMutableArray alloc] initWithArray:stringArray];

@@ -11,7 +11,7 @@
 @implementation GameData
 
 @synthesize userID;
-@synthesize gameId,gameStatus,string,stringLength,opponentId;
+@synthesize gameId,gameStatus,string,stringLength,opponentId,guessCount;
 @synthesize inProgress;
 @synthesize facebookInfos;
 
@@ -36,7 +36,7 @@ static GameData* sharedInstance;
     opponentId = opponent;
     friendsToPlay = friendIds;
     questionsAndAnswers = questions;
-    guessCount = guess;
+    //guessCount = guess;
 }
 
 -(void) setFriendsToPlay:(NSMutableArray *)friends {
@@ -56,9 +56,9 @@ static GameData* sharedInstance;
     opponentId = opponent;
 }
 
--(void) setGuessCount:(int)guess{
+/*-(void) setGuessCount:(int)guess{
     guessCount = guess;
-}
+}*/
 -(void) setSelectedFriendId:(NSString *)friendId {
     selectedFriendId = friendId;
     

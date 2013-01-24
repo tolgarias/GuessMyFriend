@@ -13,7 +13,7 @@
     NSMutableArray* friendsToPlay;
     NSString* opponentId;
     NSMutableArray* questionsAndAnswers;
-    int guessCount;
+    //int guessCount;
     NSString* selectedFriendId;
 }
 
@@ -25,7 +25,7 @@
 @property (strong,atomic) NSDictionary* inProgress;
 @property (strong,atomic) NSMutableDictionary* facebookInfos;
 @property (strong,atomic) NSString* opponentId;
-
+@property (strong,atomic) NSNumber* guessCount;
 
 +(GameData*) sharedInstance;
 
@@ -35,7 +35,7 @@
 -(void) setOpponent:(NSString*) opponent;
 -(void) setFriendsToPlay:(NSArray*) friends;
 -(void) setQuestions:(NSArray*) questions;
--(void) setGuessCount:(int) guess;
+//-(void) setGuessCount:(int) guess;
 -(void) setSelectedFriendId:(NSString*) friendId;
 -(NSDictionary*) getGameData;
 

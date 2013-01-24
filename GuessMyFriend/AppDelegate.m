@@ -228,6 +228,7 @@
         NSDictionary* values = [jsonData objectForKey:@"values"];
         NSNumber* gameId = (NSNumber*)[values objectForKey:@"gameId"];
         [GameData sharedInstance].gameId = gameId;
+        [GameData sharedInstance].guessCount = [NSNumber numberWithInt:3];
         [[SceneManager sharedSceneManager] changeScene:kCreateGameLayer];
     }
 }
