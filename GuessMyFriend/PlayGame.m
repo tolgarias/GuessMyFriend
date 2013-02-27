@@ -112,7 +112,14 @@
                 [self showMessageScreen:@"your answer is correct" message2:@"define new string after 3 seconds" action:kAnswerIsCorrect];
             }
             else {
-                [self showMessageScreen:@"your answer is wrong" message2:@"try again after 3 seconds" action:kAnswerIsWrong];
+                if([[GameData sharedInstance].guessCount intValue]>1){
+                    [self showMessageScreen:@"your answer is wrong" message2:@"try again after 3 seconds" action:kAnswerIsWrong];
+                }
+                else {
+                        [self showMessageScreen:@"you lost!" message2:@"define new string" action:kGameOver];
+                        [guessCountLabel setString:@""];
+                }
+                
             }
         }
         
@@ -177,52 +184,6 @@
     }
 }
 
-//-(void) showWaitString:(ccTime*) dt {
-/*
--(void) showWaitString:(NSString*) s {
-        [_m setVisible:NO];
-        listenCounter=3;
-        [self schedule:@selector(playString:) interval:1 repeat:[[GameData sharedInstance].stringLength intValue]-1 delay:1];
-    
-}
-
--(void) showRepeatString:(ccTime*) dt {
-    [_m showMessageLayer:@"repeat string after 3 seconds..." message2:[NSString stringWithFormat:@"%i",listenCounter] showButton:NO buttonAction:0];
-    listenCounter--;
-    [_m setVisible:YES];
-    if(listenCounter<0){
-        [_m setVisible:NO];
-        listenCounter = 3;
-    }
-}
--(void) showAnswerIsCorrect:(ccTime*) dt {
-    [_m showMessageLayer:@"your answer is correct define new string after 3 seconds..." message2:[NSString stringWithFormat:@"%i",listenCounter] showButton:NO buttonAction:0];
-    listenCounter--;
-    [_m setVisible:YES];
-    if(listenCounter<0){
-        [_m setVisible:NO];
-        listenCounter = 3;
-        [GameData sharedInstance].gameStatus = [NSNumber numberWithInt:1];
-        int stringLength = [[GameData sharedInstance].stringLength intValue];
-        [GameData sharedInstance].stringLength = [NSNumber numberWithInt:stringLength+1];
-        [[GameData sharedInstance].string removeAllObjects];
-        NSString* lengthStr = [NSString stringWithFormat:@"String length must be %i",[[GameData sharedInstance].stringLength intValue]];
-        [lengthLabel setString:lengthStr];
-        stringIndex=0;
-    }
-}
--(void) showAnswerIsWrong:(ccTime*) dt {
-    [_m showMessageLayer:@"your answer is wrong try again after 3 seconds..." message2:[NSString stringWithFormat:@"%i",listenCounter] showButton:NO buttonAction:0];
-    listenCounter--;
-    [_m setVisible:YES];
-    if(listenCounter<0){
-        [_m setVisible:NO];
-        listenCounter = 3;
-        stringIndex = 0;
-        [tempString removeAllObjects];
-    }
-}*/
-
 -(void) showMessageScreen:(NSString *)m1 message2:(NSString *)m2 action:(JobToDo *)act{
     message1 = m1;
     message2 = m2;
@@ -263,6 +224,15 @@
             NSString* guessCountStr = [NSString stringWithFormat:@"Guess Count: %i",[[GameData sharedInstance].guessCount intValue]];
             [guessCountLabel setString:guessCountStr];
             [tempString removeAllObjects];
+            
+        }
+        else if(action == kGameOver) {
+            stringIndex = 0;
+            [GameData sharedInstance].guessCount = [NSNumber numberWithInt:0];
+            [tempString removeAllObjects];
+            [GameData sharedInstance].string = 0;
+            [GameData sharedInstance].stringLength=[NSNumber numberWithInt:3];
+            [GameData sharedInstance].gameStatus = [NSNumber numberWithInt:0];
         }
     }
 

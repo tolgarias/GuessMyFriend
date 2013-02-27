@@ -18,7 +18,8 @@ typedef enum {
     kPlayString,
     kNoAction,
     kAnswerIsCorrect,
-    kAnswerIsWrong
+    kAnswerIsWrong,
+    kGameOver
 } JobToDo;
 
 @interface PlayGame : CCLayer{
