@@ -153,6 +153,7 @@
         NSString* guessCountStr = [NSString stringWithFormat:@"Guess Count: %i",[[GameData sharedInstance].guessCount intValue]];
         [guessCountLabel setString:guessCountStr];
         headerString = @"Follow the string";
+        [self setIsTouchEnabled:NO];
         [self showMessageScreen:@"Wait 3 seconds" message2:@"" action:kPlayString];
         
     }
